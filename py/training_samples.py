@@ -1,11 +1,13 @@
 #!/usr/bin/python3.4
 # -*- coding: utf-8 -*-
 
+# 本脚本为切割图片变成训练样本
 from PIL import Image
 import time
 import random
 import os
 from PIL import Image
+
 
 # 找出文件夹下所有xml后缀的文件
 def listfiles(rootdir, prefix='.xml'):
@@ -30,7 +32,7 @@ def createjia(path):
 
 if __name__ == '__main__':
     path = "../jpg/img/"
-    jpgname = listfiles(path,"jpg")
+    jpgname = listfiles(path, "jpg")
     for item in jpgname:
         try:
             jpgpath = item
@@ -52,16 +54,16 @@ if __name__ == '__main__':
             # 占比最多的10种颜色
             # for j, k in temp[:10]:
             #     print(j, k)
-                # 255 12177
-                # 0 772
-                # 254 94
-                # 1 40
-                # 245 10
-                # 12 9
-                # 236 9
-                # 243 9
-                # 2 8
-                # 6 8
+            # 255 12177
+            # 0 772
+            # 254 94
+            # 1 40
+            # 245 10
+            # 12 9
+            # 236 9
+            # 243 9
+            # 2 8
+            # 6 8
             # 255是白底，0是黑色，可以打印来看看0和254
 
             # 获取图片大小，生成一张白底255的图片
@@ -127,5 +129,3 @@ if __name__ == '__main__':
             file = open(",,/jpg/error.txt", "a")
             file.write("\n" + item)
             file.close()
-
-
