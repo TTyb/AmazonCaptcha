@@ -181,7 +181,9 @@ def runthreading():
     pool = ThreadPoolExecutor(5)
     jpgname = listfiles(path, "jpg")
     for item in jpgname:
-        pool.submit(main, item)
+        # 识别过的就不再识别了
+        if len(item)>30:
+            pool.submit(main, item)
 
 
 if __name__ == '__main__':
